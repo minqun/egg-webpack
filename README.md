@@ -1,4 +1,4 @@
-# Egg-Webpack-Starter
+# Egg-nunjucks-tpl
 
 
 
