@@ -5,6 +5,7 @@ module.exports = {
         // https://eslint.org/docs/rules/max-len
         "no-console": "off",
         "no-debugger": "off",
+        "no-unused-vars": "off",
         "semi": [2, "always"], //语句强制分号结尾
         "generator-star-spacing": "off", //生成器函数*的前后空格
         "eqeqeq": 0,

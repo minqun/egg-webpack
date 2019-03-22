@@ -1,6 +1,5 @@
 // app.js or agent.js
 
-
 class AppBootHook {
     constructor(app) {
         this.app = app;
@@ -21,12 +20,17 @@ class AppBootHook {
     }
 
     async willReady() {
+
         // All plugins have started, can do some thing before app ready
     }
 
     async didReady() {
         // Worker is ready, can do some things
         // don't need to block the app boot.
+        this.app.messenger.on('app_action', data => {
+            console.log('App Cache Cleaned...', this.app.routerloadTime = data.mtime);
+            // ...
+        });
     }
 
     async serverDidReady() {

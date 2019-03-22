@@ -8,7 +8,8 @@ const getAbsolutePath = p => path.resolve(__dirname, p);
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 let entries;
-const CopyPlugin = require('copy-webpack-plugin');
+// const CopyPlugin = require('copy-webpack-plugin');
+
 let pages = {};
 try {
     // 获取相关入口
@@ -36,12 +37,12 @@ module.exports = merge(common, {
     plugins: [
         new ManifestPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new CopyPlugin([ // 复制插件
-            {
-                from: getAbsolutePath('../app/view/'),
-                to: getAbsolutePath('../app/public/static/view')
-            }
-        ]),
+        // new CopyPlugin([ // 复制插件
+        //     {
+        //         from: getAbsolutePath('../app/view/'),
+        //         to: getAbsolutePath('../app/public/static/view')
+        //     }
+        // ]),
         new MiniCssExtractPlugin({
             filename: '[name]/[name].[contenthash:8].css',
             allChunks: true
@@ -64,6 +65,10 @@ module.exports = merge(common, {
                 },
 
                 exclude: '/node_modules/'
+            },
+            {
+                test: /\.(njk|nunjucks)$/,
+                loader: 'nunjucks-loader'
             },
             {
                 test: /\.css$/,

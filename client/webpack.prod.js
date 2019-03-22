@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const common = require('./webpack.common.js');
-const CopyPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const getAbsolutePath = p => path.resolve(__dirname, p);
 let entries;
@@ -37,16 +36,10 @@ module.exports = merge(common, {
         filename: '[name]/[name].[chunkhash:8].js'
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new ManifestPlugin({
             filename: '[name]/manifest.json',
         }),
-        // new CopyPlugin([ // 复制插件
-        //     {
-        //         from: getAbsolutePath('../app/view'),
-        //         to: getAbsolutePath('../app/public/static/view')
-        //     }
-        // ]),
-        new CleanWebpackPlugin(),
         new webpack.HashedModuleIdsPlugin({
             hashFunction: 'sha256',
             hashDigest: 'hex',
@@ -98,7 +91,7 @@ module.exports = merge(common, {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            ['env', {
+                            ['@babel/preset-env', {
                                 targets: {
                                     browsers: ['> 1%', 'last 2 versions']
                                 }
@@ -106,10 +99,15 @@ module.exports = merge(common, {
                         ]
                     }
                 },
+
                 exclude: '/node_modules/'
             }, {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+            },
+            {
+                test: /\.(njk|nunjucks)$/,
+                loader: 'nunjucks-loader'
             },
             {
                 test: /\.scss$/,

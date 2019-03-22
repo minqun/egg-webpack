@@ -5,7 +5,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json'],
         alias: {
-            '@': getAbsolutePath('../app')
+            '@': getAbsolutePath('../app'),
+            'jquery': getAbsolutePath('../app/public/utils/jquery-3.2.1.min.js')
         }
     },
     module: {
