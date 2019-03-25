@@ -1,6 +1,7 @@
+@import '@/common/base.scss';
 .title {
     font-size: 82px;
     .td {
-        color: yellow;
+        color: $baseColor;
     }
 }
