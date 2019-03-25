@@ -22,10 +22,8 @@ git clone [https://github.com/keenwon/Egg-Webpack-Starter.git](https://github.co
 npm intall && npm run dev
 ```
 
-3. 执行测试 & lint
 
-
-4. 应用部署
+1. 应用部署
 
 ```shell
 # 构建前端静态资源
@@ -61,5 +59,6 @@ npm stop
 ### 备注
 ```shell
 ....
+Demo index
 
 ```

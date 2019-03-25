@@ -1,3 +1,3 @@
-import './index.scss';
+import './home.scss';
 
 console.log('刷新');

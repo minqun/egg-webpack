@@ -6,6 +6,12 @@ class HomeController extends Controller {
         } = this;
         await ctx.render('view/index/index.njk');
     }
+    async detail() {
+        const {
+            ctx
+        } = this;
+        await ctx.render('view/home/home.njk');
+    }
 }
 
 module.exports = HomeController;

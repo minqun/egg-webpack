@@ -27,10 +27,10 @@ class AppBootHook {
     async didReady() {
         // Worker is ready, can do some things
         // don't need to block the app boot.
-        this.app.messenger.on('app_action', data => {
-            console.log('App Cache Cleaned...', this.app.routerloadTime = data.mtime);
-            // ...
-        });
+        // this.app.messenger.on('app_action', data => {
+        //     console.log('App Cache Cleaned...', this.app.routerloadTime = data.mtime);
+        //     // ...
+        // });
     }
 
     async serverDidReady() {
