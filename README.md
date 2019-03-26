@@ -41,6 +41,7 @@ npm stop
 ```shell
 .
 ├── app                 # 服务端代码
+│   ├── common          # 公共样式
 │   ├── controller      # egg controller
 │   ├── components      # egg 公共模板
 │   ├── middleware      # 中间件

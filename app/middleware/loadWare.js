@@ -25,7 +25,7 @@ module.exports = options => {
         }
         ctx.isDev = process.env.NODE_ENV === 'development';
         ctx.sources = pageConfiguration;
-        ctx.sourcesJSON = JSON.stringify({ 'isDev': process.env.NODE_ENV === 'development', 'sources': pageConfiguration });
+        ctx.sourcesJSON = JSON.stringify({ 'isDev': process.env.NODE_ENV === 'development', 'sources': pageConfiguration, 'configuration': ctx.app.config.configuration });
         await next();
     };
 };

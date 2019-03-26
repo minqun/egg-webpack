@@ -2,4 +2,7 @@
 
 {% else %}
 <script type='text/javascript' src={{ctx.sources['runtime.js']}}></script>
+{% if ctx.sources['vendors.js'] %}
+  <script type='text/javascript' src={{ctx.sources['vendors.js']}}></script>
+{% endif %}
 {% endif %}

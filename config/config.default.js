@@ -2,9 +2,6 @@ const path = require('path');
 module.exports = app => {
     const config = {};
     config.keys = '123456789';
-    config.development = {
-        reloadPattern: ['**', '!../app/view/**/*']
-    }; // 是否进行重载
     config.middleware = ['loadWare'];
     config.loadWare = {
         listen: '127.0.0.1:9000',

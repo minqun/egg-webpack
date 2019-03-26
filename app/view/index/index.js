@@ -5,5 +5,5 @@ const SOURCE = window.WEB_SOURCE || {};
 const tpl = SOURCE.isDev ? require('./index.njk') : undefined;
 /** 开发环境 监听.njk 文件 */
 $('#box').on('click', function() {
-    $(this).html('1234');
+    $(this).html(SOURCE.configuration.host);
 });
