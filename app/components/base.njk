@@ -3,7 +3,7 @@
 <head>
   {% block head %}
     <meta charset="UTF-8">
-    <title>nunjucks template</title>
+    <title>nunjucks</title>
     <meta name="keywords" content="keywords" />
     <meta name="description" content="description" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
@@ -15,8 +15,10 @@
 
     window.WEB_SOURCE = {{ctx.sourcesJSON | safe}};
     </script>
-    {% block css%}{% endblock %}
-    {% include "./common.njk" %}
+     {% include "./common.njk" %}
+     
+    {% block common%}{% endblock %}
+
     {% endblock %}
 </head>
 

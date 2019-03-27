@@ -23,9 +23,16 @@ module.exports = options => {
                 pageConfiguration = conf;
             }
         }
+        console.log('路由地址:请求', ctx.request.url);
         ctx.isDev = process.env.NODE_ENV === 'development';
         ctx.sources = pageConfiguration;
-        ctx.sourcesJSON = JSON.stringify({ 'isDev': process.env.NODE_ENV === 'development', 'sources': pageConfiguration, 'configuration': ctx.app.config.configuration });
+        let name = options && options.page ? ctx.request.url.slice(1).split('/')[0] : '';
+        ctx.styleCSS = name ? name.indexOf('.') > 0 ? `${name.split('.')[0]}.css` : `${name}.css` : 'index.css';
+        ctx.sourcesJSON = JSON.stringify({
+            'isDev': process.env.NODE_ENV === 'development',
+            'sources': pageConfiguration,
+            'configuration': ctx.app.config.configuration
+        });
         await next();
     };
 };

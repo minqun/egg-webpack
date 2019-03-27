@@ -1,8 +1,14 @@
-{% if ctx['isDev'] %}
 
-{% else %}
-<script type='text/javascript' src={{ctx.sources['runtime.js']}}></script>
-{% if ctx.sources['vendors.js'] %}
-  <script type='text/javascript' src={{ctx.sources['vendors.js']}}></script>
-{% endif %}
-{% endif %}
+  {% if ctx['isDev'] %}
+    <link rel="stylesheet" href={{ctx.sources[ctx['styleCSS']]}}>
+  {% else %}
+    <style>
+    {%include ctx.sources[ctx['styleCSS']]%}
+    </style>
+    <script type='text/javascript' src={{ctx.sources['runtime.js']}}></script>
+    {% if ctx.sources['vendors.js'] %}
+      <script type='text/javascript' src={{ctx.sources['vendors.js']}}></script>
+    {% endif %}
+  {% endif %}
+
+
