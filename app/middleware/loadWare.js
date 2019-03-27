@@ -23,7 +23,6 @@ module.exports = options => {
                 pageConfiguration = conf;
             }
         }
-        console.log('路由地址:请求', ctx.request.url);
         ctx.isDev = process.env.NODE_ENV === 'development';
         ctx.sources = pageConfiguration;
         let name = options && options.page ? ctx.request.url.slice(1).split('/')[0] : '';
