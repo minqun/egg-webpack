@@ -1,7 +1,8 @@
 module.exports = app => {
     const config = {};
     config.configuration = {
-        host: '127.0.0.0'
+        host: '127.0.0.0',
+        version: '1.0.0'
     };
     config.development = {
         reloadPattern: ['**', '!../app/view/**/*']

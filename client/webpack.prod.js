@@ -38,7 +38,7 @@ module.exports = merge(common, {
     plugins: [
         new CleanWebpackPlugin(),
         new ManifestPlugin({
-            filename: '[name]/manifest.json',
+            filename: 'manifest.json',
         }),
         new webpack.HashedModuleIdsPlugin({
             hashFunction: 'sha256',
@@ -57,9 +57,21 @@ module.exports = merge(common, {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendors',
-                    chunks: 'all'
+                    chunks: 'all',
+                    priority: 10
+                },
+                common: {
+                    test(module, chunks) {
+                        return module.type === 'javascript/auto';
+                    },
+                    name: 'common',
+                    chunks: 'all',
+                    minSize: 2,
+                    priority: 0
                 }
+
             }
+
         },
         minimizer: [
             new UglifyJsPlugin({
@@ -105,10 +117,10 @@ module.exports = merge(common, {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
             },
-            {
-                test: /\.(njk|nunjucks)$/,
-                loader: 'nunjucks-loader'
-            },
+            // {
+            //     test: /\.(njk|nunjucks)$/,
+            //     loader: 'nunjucks-loader'
+            // },
             {
                 test: /\.scss$/,
                 use: [

@@ -2,7 +2,8 @@
 module.exports = app => {
     const config = {};
     config.configuration = {
-        host: 'origin'
+        host: 'origin',
+        version: '1.0.0'
     };
     // 允许请求的方式
     config.cors = {

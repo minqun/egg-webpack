@@ -1,11 +1,10 @@
-{% extends "../../components/base.njk"  %}
-
+{% extends "../../components/base.njk" %}
 
 {% block body %}
-<p class="title">Demo<span class="td">hello world</span></p>
 
-<span id="box">{{ctx.isDev}}</span>
+  <p class="title">Demo3 {{ctx.sources['home.css']}}<span class="td">hello world index test reload -t</span></p>
 
+  <span id="box">{{ctx.isDev}}</span>
 
-<script type='text/javascript' src={{ctx.sources['home.js']}}></script>
+  <script type='text/javascript' src={{ctx.sources['home.js']}}></script>
 {% endblock %}
