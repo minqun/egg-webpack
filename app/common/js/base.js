@@ -1,5 +1,13 @@
-export const base = {
-    getHost() {
-        return 'test: 127.0.0.1';
-    },
+export default {
+    tpl(url) {
+        let SOURCE = window.WEB_SOURCE || {};
+        let tpl;
+        if (SOURCE.isDev) {
+            tpl = url;
+        } else {
+            tpl = './njk.js';
+        }
+        console.log(tpl, 'tpl');
+        return tpl;
+    }
 };

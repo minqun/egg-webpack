@@ -6,6 +6,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json'],
         alias: {
             '@': getAbsolutePath('../app'),
+            'tpl': getAbsolutePath('../../view'),
             'jquery': getAbsolutePath('../app/public/utils/jquery-3.2.1.min.js')
         }
     },
