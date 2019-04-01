@@ -3,7 +3,7 @@
 {% block body %}
    {%include '../../components/header/header.njk'%}
   <p class="title">Demo4<span class="td">hello world index test reload -t</span></p>
-
+  {{ctx.sources[ctx['styleCSS']]}}
   <span id="box">{{ctx.isDev}}</span>
 
   <script type='text/javascript' src={{ctx.sources['index.js']}}></script>

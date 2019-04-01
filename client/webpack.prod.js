@@ -31,7 +31,7 @@ module.exports = merge(common, {
     entry: pages,
     output: {
         path: getAbsolutePath('../app/public/static'),
-        publicPath: '../public/static/',
+        publicPath: '/public/static/',
         hashDigestLength: 8,
         filename: '[name]/[name].[chunkhash:8].js'
     },
@@ -117,10 +117,10 @@ module.exports = merge(common, {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
             },
-            // {
-            //     test: /\.(njk|nunjucks)$/,
-            //     loader: 'nunjucks-loader'
-            // },
+            {
+                test: /\.(njk|nunjucks)$/,
+                loader: 'nunjucks-loader'
+            },
             {
                 test: /\.scss$/,
                 use: [

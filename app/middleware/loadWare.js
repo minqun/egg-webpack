@@ -25,8 +25,8 @@ module.exports = options => {
         }
         ctx.isDev = process.env.NODE_ENV === 'development';
         ctx.sources = pageConfiguration;
-        let name = options && options.page ? ctx.request.url.slice(1).split('/')[0] : '';
-        ctx.styleCSS = name ? name.indexOf('.') > 0 ? `${name.split('.')[0]}.css` : `${name}.css` : 'index.css';
+        let name = ctx.request.url.match(/\/([^\/]*?)(\.|$)/)[1];
+        ctx.styleCSS = `${name}.css`;
         ctx.sourcesJSON = JSON.stringify({
             'isDev': process.env.NODE_ENV === 'development',
             'sources': pageConfiguration,

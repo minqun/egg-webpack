@@ -5,9 +5,8 @@ export default {
         if (SOURCE.isDev) {
             tpl = url;
         } else {
-            tpl = './njk.js';
+            tpl = '@/common/js/njk.js';
         }
-        console.log(tpl, 'tpl');
         return tpl;
     }
 };
