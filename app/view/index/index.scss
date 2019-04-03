@@ -1,0 +1,13 @@
+@import '@/common/scss/base.scss';
+@import '@/components/header/header.scss';
+.index-common {
+    height: 100px;
+    background: red;
+}
+
+.title {
+    font-size: 82px;
+    .td {
+        color: $baseColor;
+    }
+}
