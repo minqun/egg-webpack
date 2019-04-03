@@ -4,9 +4,11 @@ module.exports = app => {
         host: '127.0.0.0',
         version: '1.0.0'
     };
-    config.development = {
-        reloadPattern: ['**', '!../app/view/**/*']
-    }; // 是否进行重载
+
+    // 允许请求的方式
+    config.cors = {
+        allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+    };
     // 允许请求的方式
     config.webpack = {
         port: 9000,

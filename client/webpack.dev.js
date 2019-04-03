@@ -8,7 +8,6 @@ const getAbsolutePath = p => path.resolve(__dirname, p);
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 let entries;
-// const CopyPlugin = require('copy-webpack-plugin');
 
 let pages = {};
 try {
@@ -37,12 +36,6 @@ module.exports = merge(common, {
     plugins: [
         new ManifestPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        // new CopyPlugin([ // 复制插件
-        //     {
-        //         from: getAbsolutePath('../app/view/'),
-        //         to: getAbsolutePath('../app/public/static/view')
-        //     }
-        // ]),
         new MiniCssExtractPlugin({
             filename: '[name]/[name].[contenthash:8].css',
             allChunks: true
