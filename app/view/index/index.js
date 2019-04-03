@@ -4,8 +4,8 @@ import base from '@/common/js/base.js';
 require('' + base.tpl('./index.njk'));
 const SOURCE = window.WEB_SOURCE || {};
 
-console.log(SOURCE, '资源目录333');
+console.log(SOURCE, '资源目录');
 /** 开发环境 监听.njk 文件 */
-$('#box').on('click', function() {
-    $(this).html(SOURCE.configuration.host);
+$('.button').on('click', function(e) {
+    $('.page-text').html('click demo button --test -reload');
 });

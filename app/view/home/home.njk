@@ -1,10 +1,20 @@
 {% extends "../../components/base.njk" %}
 
 {% block body %}
+   {%include '../../components/header/header.njk'%}
+  <p class="title">Demo<span class="td"> {{ctx['styleCSS']}} test reload </span></p>
 
-  <p class="title">Demo3 {{ctx.sources['home.css']}}<span class="td">hello world index test reload -t</span></p>
+  <div class="mode-type line">
+  <span >当前是否开发环境</span>{{ctx.isDev}}
 
-  <span id="box">{{ctx.isDev}}</span>
 
-  <script type='text/javascript' src={{ctx.sources['home.js']}}></script>
+  </div>
+  <div class="page-css line">
+  <span>页面样式路径：</span>{{ctx.sources[ctx['styleCSS']]}}
+  </div>
+   <div class="page-js line">
+  <span>页面js路径：</span>{{ctx.sources['index.js']}}
+  </div>
+
+  <script type='text/javascript' src={{ctx.sources['index.js']}}></script>
 {% endblock %}

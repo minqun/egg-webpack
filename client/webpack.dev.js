@@ -26,7 +26,7 @@ entries.forEach(file => {
 });
 module.exports = merge(common, {
     mode: 'development',
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
     entry: pages,
     output: {
         path: getAbsolutePath('../app/public/static'),

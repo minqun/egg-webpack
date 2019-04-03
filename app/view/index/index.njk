@@ -2,9 +2,20 @@
 
 {% block body %}
    {%include '../../components/header/header.njk'%}
-  <p class="title">Demo4<span class="td">hello world index test reload -t</span></p>
-  {{ctx.sources[ctx['styleCSS']]}}
-  <span id="box">{{ctx.isDev}}</span>
+  <p class="title">Demo<span class="td"> {{ctx['styleCSS']}} test reload </span></p>
 
+  <div class="mode-type line">
+  <span >当前是否开发环境</span>{{ctx.isDev}}
+
+
+  </div>
+  <div class="page-css line">
+  <span>页面样式路径：</span>{{ctx.sources[ctx['styleCSS']]}}
+  </div>
+   <div class="page-js line">
+  <span>页面js路径：</span>{{ctx.sources['index.js']}}
+  </div>
+<div class="page-text"></div>
+  <button class="button">demo</button>
   <script type='text/javascript' src={{ctx.sources['index.js']}}></script>
 {% endblock %}
