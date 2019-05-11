@@ -31,7 +31,7 @@ module.exports = merge(common, {
     entry: pages,
     output: {
         path: getAbsolutePath('../app/public/static'),
-        publicPath: '/public/static/',
+        publicPath: '../public/static/',
         hashDigestLength: 8,
         filename: '[name]/[name].[chunkhash:8].js'
     },
