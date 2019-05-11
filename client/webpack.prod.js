@@ -38,7 +38,7 @@ module.exports = merge(common, {
     plugins: [
         new CleanWebpackPlugin(),
         new ManifestPlugin({
-            filename: 'manifest.json',
+            fileName: 'manifest.json',
         }),
         new webpack.HashedModuleIdsPlugin({
             hashFunction: 'sha256',

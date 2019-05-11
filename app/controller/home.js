@@ -8,7 +8,6 @@ class HomeController extends Controller {
             ctx,
             config
         } = this;
-
         await ctx.render('view/index/index.njk');
     }
     async detail() {
@@ -17,6 +16,13 @@ class HomeController extends Controller {
             config
         } = this;
         await ctx.render('view/home/home.njk');
+    }
+    async about() {
+        const {
+            ctx,
+            config
+        } = this;
+        await ctx.render('view/about/about.njk');
     }
 }
 

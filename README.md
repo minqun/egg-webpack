@@ -54,6 +54,7 @@ npm stop
 │   ├── webpack.common  # webpack config
 │   ├── webpack.dev
 │   └── webpack.prod
+├── config   
 ├── logs                # 日志
 
 ```

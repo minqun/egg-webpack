@@ -25,7 +25,8 @@ module.exports = options => {
         }
         ctx.isDev = process.env.NODE_ENV === 'development';
         ctx.sources = pageConfiguration;
-        let name = ctx.request.url.match(/\/([^\/]*?)(\.|$)/)[1];
+        let name = ctx.request.url.match(/\/([^\/]*?)(\.|$)/)[1] ? ctx.request.url.match(/\/([^\/]*?)(\.|$)/)[1] : 'index';
+        console.log(name, '路径名称');
         ctx.styleCSS = `${name}.css`;
         ctx.sourcesJSON = JSON.stringify({
             'isDev': process.env.NODE_ENV === 'development',
